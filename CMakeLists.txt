@@ -23,5 +23,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread")
 include_directories( include )
 
 # -- Executable
-add_executable(000_helloworld src/000_helloworld.cpp)
-add_executable(037_sudoku_solver src/037_sudoku_solver.cpp)
+add_executable(000_helloworld              src/000_helloworld.cpp)
+add_executable(037_sudoku_solver           src/037_sudoku_solver.cpp)
+add_executable(307_Range_Sum_Query_Mutable src/307_Range_Sum_Query_Mutable.cpp)
+add_executable(850_Rectangle_Area_II       src/850_Rectangle_Area_II.cpp)
