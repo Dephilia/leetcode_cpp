@@ -56,11 +56,15 @@ struct ListNode {
     int val;
     ListNode *next;
 
+    ListNode() : val(0), next(nullptr) {}
     ListNode(int x) : val(x), next(nullptr) {}
+    ListNode(int x, ListNode* next) : val(x), next(next) {}
 };
 
 static ListNode *parse_list(string s) {
-    const regex re("->");
+    s.pop_back();
+    s.erase(s.begin());
+    const regex re(",");
     vector<string> v(sregex_token_iterator(s.begin(), s.end(), re, -1), sregex_token_iterator());
     ListNode *mock = new ListNode(-1), *p = mock;
     for (auto &i : v) {
@@ -70,9 +74,13 @@ static ListNode *parse_list(string s) {
     return mock->next;
 }
 
-static string to_string(ListNode *node) {
+static string _helper_to_string(ListNode *node) {
     if (!node) return "";
-    return to_string(node->val) + (node->next ? "->" + to_string(node->next) : "");
+    return to_string(node->val) + (node->next ? "," + _helper_to_string(node->next) : "");
+}
+
+static string to_string(ListNode *node) {
+    return "[" + _helper_to_string(node) + "]";
 }
 
 static void print(ListNode *node) {
