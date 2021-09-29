@@ -15,13 +15,13 @@ public:
         vector<ListNode*> ans;
         int n = 0;
         ListNode* cur = head;
-        
+
         // Count
         while (cur != nullptr){
             n++;
             cur = cur->next;
         }
-        
+
         // Situation k >= n
         if ( k >= n) {
             cur = head;
@@ -32,10 +32,9 @@ public:
                 cur = cur->next;
             }
             for (int i=0; i<k-n; ++i) ans.push_back(nullptr);
-            
             return ans;
         }
-        
+
         // Situation k < n
         cur = head;
         int m = n/k;
@@ -58,9 +57,6 @@ public:
             }
 
         }
-
-        
-        
         return ans;
     }
 };
@@ -75,7 +71,6 @@ int main() {
 
     Solution sol;
 
-    /* cout << to_string(sol.splitListToParts(head, 3)) << endl; */
     cout << "[";
     for (auto& s:sol.splitListToParts(head, 3)) {
         cout << to_string(s) << ",";

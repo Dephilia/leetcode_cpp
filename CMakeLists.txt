@@ -24,6 +24,7 @@ include_directories( include )
 
 # -- Executable
 add_executable(000_helloworld                          src/000_helloworld.cpp)
+add_executable(002_Add_Two_Numbers                     src/002_Add_Two_Numbers.cpp)
 add_executable(037_sudoku_solver                       src/037_sudoku_solver.cpp)
 add_executable(307_Range_Sum_Query_Mutable             src/307_Range_Sum_Query_Mutable.cpp)
 add_executable(485_Max_Consecutive_Ones                src/485_Max_Consecutive_Ones.cpp)
