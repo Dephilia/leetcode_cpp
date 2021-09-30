@@ -71,11 +71,7 @@ int main() {
 
     Solution sol;
 
-    cout << "[";
-    for (auto& s:sol.splitListToParts(head, 3)) {
-        cout << to_string(s) << ",";
-    }
-    cout << "\b]";
+    cout << to_string(sol.splitListToParts(head, 3)) << endl;
 
     return 0;
 }

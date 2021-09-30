@@ -99,3 +99,16 @@ struct Interval {
 };
 
 /// =========================================================================
+
+template<class T>
+static string to_string(vector<T> vec) {
+    string res;
+    res += "[";
+    for (auto& v:vec) {
+        res = res + to_string(v) + ",";
+    }
+    res += "\b]";
+    return res;
+}
+
+/// =========================================================================
