@@ -6,12 +6,13 @@
 all: builds
 
 init:
-	mkdir -p build; \
+	@mkdir -p build; \
 	cd build; \
 	cmake .. -G "Ninja"
 
-builds:
-	cmake --build build
+builds: init
+	@cmake --build build
 
 clean:
-	rm -rf build
+	@rm -rf build
+	@echo "Clean build files."
